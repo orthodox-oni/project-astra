@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samrat Singh | Premium Portfolio</title>
+    <meta
+      name="description"
+      content="Premium dark portfolio with cinematic animations, glassmorphism, and modern interactions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="preloader" id="preloader">
+      <div class="spinner"></div>
+      <p>Loading the experience...</p>
+    </div>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <canvas class="starfield" id="starfield"></canvas>
+    <div class="particles" id="particles"></div>
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <header class="topbar">
+      <nav class="navglass">
+        <div class="brand">Samrat</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#library">Book Library</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"></button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section hero" id="home">
+        <div class="content-container" data-reveal>
+          <p class="eyebrow">Premium Creative Portfolio</p>
+          <h1>Crafting immersive digital experiences with a cinematic touch.</h1>
+          <p class="subtitle">
+            Innovative front-end solutions rooted in design, motion, and performance.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="#contact">Let&rsquo;s Talk</a>
+          </div>
+          <p class="typing-line">I am a <span id="typeText"></span><span class="cursor">|</span></p>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="section-header" data-reveal>
+          <span>01</span>
+          <h2>About</h2>
+        </div>
+        <div class="grid-two">
+          <div class="panel" data-reveal>
+            <p>
+              An ambitious front-end engineer with a passion for premium digital interfaces and efficient, modern web experiences.
+              I design clean, responsive layouts and build polished interactions for brands that want a refined online presence.
+            </p>
+          </div>
+          <div class="panel stats" data-reveal>
+            <div>
+              <h3>10+</h3>
+              <p>Years of experience</p>
+            </div>
+            <div>
+              <h3>30+</h3>
+              <p>Projects delivered</p>
+            </div>
+            <div>
+              <h3>5</h3>
+              <p>Industry sectors</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section skills" id="skills">
+        <div class="section-header" data-reveal>
+          <span>02</span>
+          <h2>Skills</h2>
+        </div>
+        <div class="skill-grid">
+          <div class="skill-card" data-reveal>
+            <h3>Visual Design</h3>
+            <p>Modern layouts, typography, and motion for high-end digital brands.</p>
+          </div>
+          <div class="skill-card" data-reveal>
+            <h3>Front-End Architecture</h3>
+            <p>Robust HTML, CSS, and JavaScript with a focus on accessibility and performance.</p>
+          </div>
+          <div class="skill-card" data-reveal>
+            <h3>Interaction Motion</h3>
+            <p>Fluid transitions, scroll effects, and immersive micro-interactions.</p>
+          </div>
+          <div class="skill-card" data-reveal>
+            <h3>Responsive Systems</h3>
+            <p>Seamless experiences across desktop, tablet, and mobile devices.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section projects" id="projects">
+        <div class="section-header" data-reveal>
+          <span>03</span>
+          <h2>Projects</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card" data-reveal>
+            <div class="project-meta">Brand platform</div>
+            <h3>Space-grade landing page</h3>
+            <p>Modular interface that blends motion, clarity, and conversion-focused storytelling.</p>
+          </article>
+          <article class="project-card" data-reveal>
+            <div class="project-meta">Product showcase</div>
+            <h3>Luxury product launch</h3>
+            <p>High-impact visuals with glass-like surfaces and subtle particle motion.</p>
+          </article>
+          <article class="project-card" data-reveal>
+            <div class="project-meta">Creative system</div>
+            <h3>Design system refresh</h3>
+            <p>A polished component library built for consistency, speed, and elegant expression.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section library" id="library">
+        <div class="section-header" data-reveal>
+          <span>04</span>
+          <h2>Book Library</h2>
+        </div>
+        <div class="cards-grid">
+          <div class="book-card" data-reveal>
+            <h3>Atomic Habits</h3>
+            <p>Small improvements build long-term discipline and personal growth.</p>
+          </div>
+          <div class="book-card" data-reveal>
+            <h3>Designing Interfaces</h3>
+            <p>Practical strategies for crafting immersive digital experiences.</p>
+          </div>
+          <div class="book-card" data-reveal>
+            <h3>Dark Matter</h3>
+            <p>Visionary storytelling paired with cutting-edge style inspiration.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section timeline" id="timeline">
+        <div class="section-header" data-reveal>
+          <span>05</span>
+          <h2>Timeline</h2>
+        </div>
+        <div class="timeline-wrap">
+          <div class="timeline-item" data-reveal>
+            <span>2025</span>
+            <p>Launched an immersive portfolio experience for a premium technology brand.</p>
+          </div>
+          <div class="timeline-item" data-reveal>
+            <span>2023</span>
+            <p>Designed a responsive interface system for a commerce platform.</p>
+          </div>
+          <div class="timeline-item" data-reveal>
+            <span>2021</span>
+            <p>Delivered polished motion-driven landing pages for boutique studios.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section achievements" id="achievements">
+        <div class="section-header" data-reveal>
+          <span>06</span>
+          <h2>Achievements</h2>
+        </div>
+        <div class="achievement-grid">
+          <div class="achievement-card" data-reveal>
+            <h3>Featured case studies</h3>
+            <p>Recognized for refined visual storytelling and user-friendly journeys.</p>
+          </div>
+          <div class="achievement-card" data-reveal>
+            <h3>Performance first</h3>
+            <p>Pages built to load quickly while preserving cinematic motion.</p>
+          </div>
+          <div class="achievement-card" data-reveal>
+            <h3>Creative awards</h3>
+            <p>Honored for premium product launches and elegant UI craftsmanship.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section hobbies" id="hobbies">
+        <div class="section-header" data-reveal>
+          <span>07</span>
+          <h2>Hobbies</h2>
+        </div>
+        <div class="hobby-grid">
+          <div class="hobby-card" data-reveal>
+            <h3>Photography</h3>
+            <p>Capturing architecture, motion, and nocturnal cityscapes.</p>
+          </div>
+          <div class="hobby-card" data-reveal>
+            <h3>Stargazing</h3>
+            <p>Exploring cosmic visuals and inspiration in the night sky.</p>
+          </div>
+          <div class="hobby-card" data-reveal>
+            <h3>Writing</h3>
+            <p>Crafting clean stories and sharp messaging for digital experiences.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="section-header" data-reveal>
+          <span>08</span>
+          <h2>Contact</h2>
+        </div>
+        <div class="contact-panel" data-reveal>
+          <p>
+            Ready to collaborate on your next premium project? Send a message and let&rsquo;s explore the possibilities.
+          </p>
+          <a class="btn btn-primary" href="mailto:hello@example.com">hello@example.com</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Samrat Singh. Built with HTML, CSS, and JavaScript.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
