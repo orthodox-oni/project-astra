@@ -24,3 +24,19 @@ Initial release
 - GitHub setup
 - Live Server
 - Portfolio foundation
+
+## v0.2.1
+
+### Added
+- Personalized typing animation
+- Honest hero section
+- Project Astra branding
+
+### Changed
+- Updated homepage title
+- Updated hero subtitle
+- Replaced generic portfolio content with personal content
+
+### Learning
+- Explored HTML sections
+- Learned JavaScript typing animation

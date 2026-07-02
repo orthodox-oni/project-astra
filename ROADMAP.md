@@ -33,12 +33,12 @@ but through thoughtful design, clean code, and attention to detail.
 # Version 0.2 — Identity (Current)
 
 ## Hero Section
-- [ ] Replace generic title
+- [x] Replace generic title
 - [x] PROJECT ASTRA heading
 - [x] Samrat Singh title
 - [x] Honest subtitle
 - [ ] Rewrite CTA buttons
-- [ ] Improve typing animation
+- [x] Improve typing animation
 
 ## About
 - [ ] Write authentic story
@@ -221,6 +221,14 @@ Completed
 ---
 
 ## v0.2 — Identity 🚧
+
+Progress
+
+- [x] Hero redesigned
+- [x] Typing animation personalized
+- [ ] About section
+- [ ] Navigation redesign
+- [ ] Contact section
 
 Current Development
 
