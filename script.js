@@ -8,7 +8,14 @@ const starfield = document.getElementById('starfield');
 const particlesContainer = document.getElementById('particles');
 const revealElements = document.querySelectorAll('[data-reveal]');
 
-const roles = ['Front-End Engineer', 'UI Motion Designer', 'Digital Experience Creator', 'Product Storyteller'];
+const roles = [
+  "Student",
+  "Future Software Engineer",
+  "Cybersecurity Enthusiast",
+  "AI Explorer",
+  "Always Learning",
+  "Building Project Astra"
+];
 let typeIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
