@@ -226,7 +226,7 @@ Progress
 
 - [x] Hero redesigned
 - [x] Typing animation personalized
-- [ ] About section
+- [x] About section
 - [ ] Navigation redesign
 - [ ] Contact section
 

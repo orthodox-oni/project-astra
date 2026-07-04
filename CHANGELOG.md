@@ -39,4 +39,17 @@ Initial release
 
 ### Learning
 - Explored HTML sections
-- Learned JavaScript typing animation
+- Learned JavaScript typing animation 
+
+## M003 - About Section Rewrite
+
+Added
+- Personal story
+- Mission-based statistics
+
+Changed
+- Removed placeholder experience numbers
+- Updated About section with authentic content
+
+Fixed
+- Broken HTML structure in About section

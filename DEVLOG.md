@@ -75,3 +75,18 @@ For the first time, the website started feeling like it was actually mine instea
 - Improve navigation
 - Begin redesigning the overall experience
 - Continue learning HTML, CSS, and JavaScript
+
+## Day 3
+
+Today's focus:
+- Rewrote the About section completely.
+- Removed fake experience and placeholder content.
+- Replaced statistics with values that actually represent my journey.
+- Learned more about HTML structure and nested divs.
+- Practiced committing changes using Git.
+
+Lesson learned:
+Every portfolio should tell the truth. Authenticity is stronger than fake numbers.
+
+Time spent:
+~1.5 hours 
