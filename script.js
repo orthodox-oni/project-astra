@@ -33,6 +33,14 @@ window.addEventListener('DOMContentLoaded', () => {
   initScrollProgress();
   initSmoothLinks();
   initRevealObserver();
+
+  const hero = document.querySelector('.hero');
+
+  if (hero) {
+    setTimeout(() => {
+      hero.classList.add('animate');
+    }, 200);
+  }
 });
 
 function hidePreloader() {

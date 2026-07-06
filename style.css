@@ -153,7 +153,9 @@ p {
 }
 
 .content-container {
-  max-width: 780px;
+  max-width: 900px;
+  position: relative;
+  z-index: 2;
 }
 
 .eyebrow {
@@ -163,18 +165,22 @@ p {
   margin-bottom: 18px;
 }
 
-.hero h1 {
-  font-size: clamp(3.2rem, 5vw, 4.6rem);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
-  margin-bottom: 24px;
-  max-width: 10em;
+ .hero h1 {
+  font-size: clamp(4rem, 8vw, 6.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  margin: 0 0 28px;
+  font-weight: 800;
+  max-width: 12ch;
+  text-shadow: 0 0 25px rgba(126, 163, 255, 0.18);
 }
 
 .subtitle {
-  color: #c7c9d4;
-  max-width: 42rem;
-  margin-bottom: 32px;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.78);
+  max-width: 650px;
+  margin-bottom: 42px;
 }
 
 .hero-actions {
@@ -474,6 +480,46 @@ p {
     font-size: clamp(2.75rem, 10vw, 3.75rem);
   }
 }
+
+.hero .eyebrow,
+.hero h1,
+.hero .subtitle,
+.hero .hero-actions,
+.hero .typing-line {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.hero.animate .eyebrow {
+  animation: heroFadeUp 0.8s ease forwards;
+}
+
+.hero.animate h1 {
+  animation: heroFadeUp 0.8s ease 0.25s forwards;
+}
+
+.hero.animate .subtitle {
+  animation: heroFadeUp 0.8s ease 0.5s forwards;
+}
+
+.hero.animate .hero-actions {
+  animation: heroFadeUp 0.8s ease 0.75s forwards;
+}
+
+.hero.animate .typing-line {
+  animation: heroFadeUp 0.8s ease 1s forwards;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
 
 @media (max-width: 520px) {
   .navglass {
