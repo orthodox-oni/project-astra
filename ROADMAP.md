@@ -33,17 +33,20 @@ but through thoughtful design, clean code, and attention to detail.
 # Version 0.2 — Identity (Current)
 
 ## Hero Section
+
 - [x] Replace generic title
 - [x] PROJECT ASTRA heading
-- [x] Samrat Singh title
+- [x] Samrat Singh title 
 - [x] Honest subtitle
-- [ ] Rewrite CTA buttons
 - [x] Improve typing animation
+- [x] Cinematic entrance animation
+- [ ] Rewrite CTA buttons
+- [ ] Cosmic glow
 
 ## About
-- [ ] Write authentic story
-- [ ] Remove fake experience
-- [ ] Explain current journey
+- [x] Write authentic story
+- [x] Remove fake experience
+- [x] Explain current journey
 
 ## Navigation
 - [ ] Improve menu
@@ -80,15 +83,17 @@ but through thoughtful design, clean code, and attention to detail.
 
 ---
 
-# Version 0.5 — Animations
+## Version 0.5 — Animations
 
+- [x] Hero entrance animation
+- [ ] Cosmic glow
 - [ ] Better particles
 - [ ] Better stars
+- [ ] Premium button interactions
 - [ ] Scroll animations
 - [ ] Floating elements
 - [ ] Glassmorphism improvements
 - [ ] Interactive backgrounds
-
 ---
 
 # Version 0.6 — Terminal
@@ -234,3 +239,43 @@ Current Development
 
 Focus:
 Building the authentic version of Project Astra.
+
+# Engineering Workflow
+
+Every feature follows the same process:
+
+Plan
+
+↓
+
+Build
+
+↓
+
+Test
+
+↓
+
+Document
+
+↓
+
+Commit
+
+↓
+
+Push
+
+↓
+
+Repeat
+
+# Design Philosophy
+
+Project Astra should feel:
+
+- Clean before flashy.
+- Cinematic before animated.
+- Honest before impressive.
+- Premium before complicated.
+- Memorable without being overwhelming.

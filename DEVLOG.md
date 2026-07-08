@@ -35,9 +35,6 @@ Begin redesigning the portfolio to make it authentic.
 
 # Day 3 – Milestone M002: Identity 🚀
 
-## Date
-(Write today's date)
-
 ## Mission
 Begin transforming the generated portfolio into my own personal project.
 
@@ -90,3 +87,36 @@ Every portfolio should tell the truth. Authenticity is stronger than fake number
 
 Time spent:
 ~1.5 hours 
+
+# Day 4 – Milestone M005: Cinematic Motion 🚀
+
+## Mission
+
+Begin transforming Project Astra from a static portfolio into a cinematic experience.
+
+## Completed
+
+- Added sequential hero entrance animation.
+- Hero content now appears in stages instead of all at once.
+- Learned how CSS animations work with JavaScript.
+- Tested the feature before committing.
+- Continued following the Project Astra mission workflow.
+
+## What I Learned
+
+Today I learned:
+
+- CSS animations can be triggered by adding classes with JavaScript.
+- Small, incremental changes are much easier to debug.
+- Testing every feature before committing makes development safer.
+- Good animations guide the user's attention instead of distracting them.
+
+## Biggest Win
+
+For the first time, Project Astra feels more like an experience than a simple portfolio.
+
+## Next Mission
+
+- Create a cosmic glow behind the hero section.
+- Improve button interactions.
+- Continue refining the premium visual style.

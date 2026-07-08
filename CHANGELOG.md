@@ -53,3 +53,14 @@ Changed
 
 Fixed
 - Broken HTML structure in About section
+
+## M005 – Hero Cinematic Entrance
+
+### Added
+- Sequential hero entrance animation.
+- Hero elements now fade in one after another.
+- Improved first impression and storytelling.
+- Foundation for future rocket launch sequence.
+
+### Changed
+- Hero section now loads with staged animations instead of appearing instantly.
