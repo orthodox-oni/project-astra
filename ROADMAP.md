@@ -279,3 +279,24 @@ Project Astra should feel:
 - Honest before impressive.
 - Premium before complicated.
 - Memorable without being overwhelming.
+
+## M006 — Premium Landing Page
+
+### ✅ M006.1
+- Hero layout foundation
+- Responsive title improvements
+- Container restructuring
+
+### ⏳ M006.2
+- Complete premium hero redesign
+- About Me card
+- Projects card
+- Achievements card
+- Animated planet background
+- Nebula animation
+- Premium hover effects
+
+### 🔜 M006.3
+- Theme color switcher
+- Performance optimization
+- Mobile polish

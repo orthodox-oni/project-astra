@@ -84,6 +84,10 @@ Project Astra is built on six principles:
 - ⏳ M003 – Knowledge
 - ⏳ M004 – Projects
 - ⏳ M005 – Launch
+- Current Mission:
+M006.1 ✅
+Next:
+M006.2 — Premium Hero Redesign
 
 ---
 

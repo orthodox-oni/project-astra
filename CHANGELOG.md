@@ -64,3 +64,19 @@ Fixed
 
 ### Changed
 - Hero section now loads with staged animations instead of appearing instantly.
+
+## [M006.1] - Hero Layout Foundation
+
+### Added
+- Improved hero section layout foundation.
+- Single-line responsive hero title.
+- Better spacing for subtitle and content.
+- Wider content container for future redesign.
+
+### Changed
+- Refined hero typography.
+- Improved responsive heading sizing.
+- Updated content container structure in preparation for premium hero redesign.
+
+### Notes
+This mission lays the groundwork for the complete Project Astra landing page redesign planned in M006.2.

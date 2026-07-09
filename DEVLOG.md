@@ -120,3 +120,25 @@ For the first time, Project Astra feels more like an experience than a simple po
 - Create a cosmic glow behind the hero section.
 - Improve button interactions.
 - Continue refining the premium visual style.
+
+# Dev Log
+
+## Mission M006.1
+
+Today I began rebuilding the hero section for Project Astra.
+
+Completed:
+- Hero title now stays on one line.
+- Improved hero spacing.
+- Adjusted typography.
+- Prepared layout for a future two-column hero.
+
+Challenges:
+- Several layout attempts looked worse than expected.
+- Tested different card positions before deciding on a complete redesign.
+
+Decision:
+Rather than patching the existing hero, the next mission will rebuild it from scratch using a premium layout inspired by modern portfolio websites.
+
+Next Mission:
+M006.2 – Premium Hero Redesign
