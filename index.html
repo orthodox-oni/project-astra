@@ -49,8 +49,25 @@
     <main>
       <section class="section hero" id="home">
         <div class="hero-background">
-  <div class="hero-nebula"></div>
-  <div class="hero-planet"></div>
+
+    <div class="hero-nebula"></div>
+
+    <div class="hero-space">
+
+        <img
+            src="assets/planet-main.webp"
+            class="planet planet-main"
+            alt=""
+        >
+
+        <img
+            src="assets/planet-small.webp"
+            class="planet planet-small"
+            alt=""
+        >
+
+    </div>
+
 </div>
         <div class="content-container" data-reveal>
           <p class="eyebrow">PROJECT ASTRA</p>
@@ -67,35 +84,78 @@
   I am a <span id="typeText"></span><span class="cursor">|</span>
 </p>
 
-<div class="hero-cards">
+<!-- ================= HERO CARDS ================= -->
 
-  <div class="hero-card" data-reveal>
-    <span>Current Mission</span>
-    <h3>Building Project Astra</h3>
-    <p>Learning HTML, CSS, JavaScript and Git one milestone at a time.</p>
-  </div>
+<div class="hero-grid">
 
-  <div class="hero-card" data-reveal>
-    <span>Focus</span>
-    <h3>Software Engineering</h3>
-    <p>Preparing for university while building real-world projects.</p>
-  </div>
+    <!-- ABOUT ME -->
+    <article class="glass-card about-card" data-reveal>
 
-  <div class="hero-card" data-reveal>
-    <span>Current Goal</span>
-    <h3>Become Internship Ready</h3>
-    <p>Every commit should make me a better developer than yesterday.</p>
-  </div>
+        <div class="card-image">
+            <img src="assets/about-art.png" alt="About Me Artwork">
+        </div>
 
-  <div class="hero-card" data-reveal>
-    <span>Philosophy</span>
-    <h3>Build Honestly</h3>
-    <p>Real progress matters more than pretending to be experienced.</p>
-  </div>
+        <div class="card-content">
+
+            <span>ABOUT ME</span>
+
+            <h3>Who I Am</h3>
+
+            <p>
+                Passionate developer, cybersecurity enthusiast and future software engineer building Project Astra one milestone at a time.
+            </p>
+
+        </div>
+
+    </article>
+
+
+    <!-- PROJECTS -->
+    <article class="glass-card project-card" data-reveal>
+
+        <div class="card-image">
+            <img src="assets/projects-art.png" alt="Projects Artwork">
+        </div>
+
+        <div class="card-content">
+
+            <span>PROJECTS</span>
+
+            <h3>Current Builds</h3>
+
+            <p>
+                Interactive web experiences, JavaScript applications, UI design and future AI projects.
+            </p>
+
+        </div>
+
+    </article>
+
+
+    <!-- ACHIEVEMENTS -->
+    <article class="glass-card achievement-card" data-reveal>
+
+        <div class="card-image">
+            <img src="assets/achievement-art.png" alt="Achievement Artwork">
+        </div>
+
+        <div class="card-content">
+
+            <span>ACHIEVEMENTS</span>
+
+            <h3>Journey</h3>
+
+            <p>
+                National Speed Skating Champion, martial artist and lifelong learner.
+            </p>
+
+        </div>
+
+    </article>
 
 </div>
 
-</div>   <!-- content-container closes here ✅ -->
+<!-- ================= END HERO CARDS ================= -->
 
 </section>
 
