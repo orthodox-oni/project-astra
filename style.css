@@ -153,13 +153,23 @@ p {
   align-items: center;
   justify-content: center;
   padding-top: 180px;
+
+  isolation: isolate;
 }
 
 .content-container {
   position: relative;
   z-index: 2;
 
-  max-width: 780px;
+  width: 100%;
+  max-width: 1300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin: 0 auto;
+  padding: 0 80px;
 }
 
 .eyebrow {
@@ -170,12 +180,15 @@ p {
 }
 
  .hero h1 {
-  font-size: clamp(4rem, 8vw, 6.5rem);
+  font-size: clamp(4.5rem, 7vw, 6.8rem);
   line-height: 0.92;
   letter-spacing: -0.06em;
   margin: 0 0 28px;
   font-weight: 800;
-  max-width: 12ch;
+
+  white-space: nowrap;
+  max-width: none;
+
   text-shadow: 0 0 25px rgba(126, 163, 255, 0.18);
 }
 
@@ -183,7 +196,7 @@ p {
   font-size: 1.25rem;
   line-height: 1.8;
   color: rgba(255,255,255,0.78);
-  max-width: 650px;
+  max-width: 700px;
   margin-bottom: 42px;
 }
 
@@ -548,4 +561,53 @@ p {
   .section {
     padding: 70px 4vw;
   }
+}
+
+.hero-cards {
+  margin-top: 70px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 24px;
+
+  width: 100%;
+  max-width: 900px;
+}
+
+.hero-card {
+  background: rgba(255,255,255,0.04);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 24px;
+
+  padding: 28px;
+
+  backdrop-filter: blur(16px);
+
+  transition: .35s ease;
+}
+
+.hero-card:hover{
+  transform: translateY(-8px);
+  border-color: rgba(94,234,212,.5);
+  box-shadow: 0 20px 40px rgba(0,0,0,.35);
+}
+
+.hero-card span{
+  color:#8b9cff;
+  font-size:.85rem;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.hero-card h3{
+  margin:12px 0;
+  font-size:1.5rem;
+}
+
+.hero-card p{
+  opacity:.75;
+  line-height:1.7;
 }
