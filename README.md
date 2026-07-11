@@ -143,3 +143,50 @@ Project Astra will continue evolving as I grow as a developer.
 Built with curiosity, discipline, and a commitment to continuous learning.
 
 © Samrat Singh
+
+What we'll build over the next missions
+
+Mission M006
+✅ Hero cleanup
+
+Mission M007
+⭐ Premium starfield
+
+Mission M008
+🌌 Animated nebula
+
+Mission M009
+🌠 Shooting stars
+
+Mission M010
+🪐 Floating planets (pure CSS)
+
+Mission M011
+💎 Premium hero cards
+
+Mission M012
+✨ Mouse parallax
+
+Mission M013
+⚡ Section transitions
+
+Mission M014
+📚 About section redesign
+
+Mission M015
+🚀 Project showcase
+
+Mission M016
+📖 Library
+
+Mission M017
+🏆 Achievements
+
+Mission M018
+📱 Responsive redesign
+
+Mission M019
+🌙 Theme engine
+
+Mission M020
+🎬 Final cinematic polish save this in memory to okay 
