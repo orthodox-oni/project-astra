@@ -36,12 +36,12 @@ but through thoughtful design, clean code, and attention to detail.
 
 - [x] Replace generic title
 - [x] PROJECT ASTRA heading
-- [x] Samrat Singh title 
+- [x] Samrat Singh title
 - [x] Honest subtitle
 - [x] Improve typing animation
 - [x] Cinematic entrance animation
-- [ ] Rewrite CTA buttons
-- [ ] Cosmic glow
+- [x] Rewrite CTA buttons
+- [x] Cosmic glow
 
 ## About
 - [x] Write authentic story
@@ -49,51 +49,51 @@ but through thoughtful design, clean code, and attention to detail.
 - [x] Explain current journey
 
 ## Navigation
-- [ ] Improve menu
-- [ ] Smooth scrolling
-- [ ] Mobile optimization
+- [x] Improve menu
+- [x] Smooth scrolling
+- [x] Mobile optimization
 
 ---
 
 # Version 0.3 — Knowledge
 
 ## Bookshelf
-- [ ] Interactive bookshelf
-- [ ] Psychology books
-- [ ] Law books
-- [ ] Literature books
-- [ ] Philosophy books
-- [ ] Reading progress
+- [x] Interactive bookshelf
+- [x] Psychology books
+- [x] Law books
+- [x] Literature books
+- [x] Philosophy books
+- [x] Reading progress
 
 ## Timeline
-- [ ] School journey
-- [ ] Certifications
-- [ ] Projects
-- [ ] Future milestones
+- [x] School journey
+- [x] Certifications
+- [x] Projects
+- [x] Future milestones
 
 ---
 
 # Version 0.4 — Projects
 
-- [ ] Portfolio redesign
-- [ ] GitHub integration
-- [ ] Project cards
-- [ ] Live demos
-- [ ] Case studies
+- [x] Portfolio redesign
+- [x] GitHub integration
+- [x] Project cards
+- [x] Live demos
+- [x] Case studies
 
 ---
 
 ## Version 0.5 — Animations
 
 - [x] Hero entrance animation
-- [ ] Cosmic glow
-- [ ] Better particles
-- [ ] Better stars
-- [ ] Premium button interactions
-- [ ] Scroll animations
-- [ ] Floating elements
-- [ ] Glassmorphism improvements
-- [ ] Interactive backgrounds
+- [x] Cosmic glow
+- [x] Better particles
+- [x] Better stars
+- [x] Premium button interactions
+- [x] Scroll animations
+- [x] Floating elements
+- [x] Glassmorphism improvements
+- [x] Interactive backgrounds
 ---
 
 # Version 0.6 — Terminal
@@ -119,12 +119,12 @@ Ideas:
 
 # Version 0.7 — Intelligence
 
-- [ ] Dark / Light mode
-- [ ] Dynamic theme
-- [ ] Visitor counter
-- [ ] Animated statistics
-- [ ] Interactive map
-- [ ] Performance optimization
+- [x] Dark / Light mode
+- [x] Dynamic theme
+- [x] Visitor counter
+- [x] Animated statistics
+- [x] Interactive map
+- [x] Performance optimization
 
 ---
 
@@ -183,7 +183,7 @@ Create an unforgettable first impression.
 
 # Future Ideas
 
-- [ ] AI Assistant
+- [x] AI Assistant
 - [ ] Interactive Resume
 - [ ] Blog
 - [ ] Notes section
@@ -191,8 +191,8 @@ Create an unforgettable first impression.
 - [ ] Certificates
 - [ ] Wallpapers
 - [ ] Hidden Pages
-- [ ] Secret achievements
-- [ ] Achievement badges
+- [x] Secret achievements
+- [x] Achievement badges
 
 ---
 
@@ -225,20 +225,20 @@ Completed
 
 ---
 
-## v0.2 — Identity 🚧
+## v0.2 — Identity ✅
 
 Progress
 
 - [x] Hero redesigned
 - [x] Typing animation personalized
 - [x] About section
-- [ ] Navigation redesign
-- [ ] Contact section
+- [x] Navigation redesign
+- [x] Contact section
 
 Current Development
 
 Focus:
-Building the authentic version of Project Astra.
+The cinematic version of Project Astra is live in the browser. Future ideas remain open.
 
 # Engineering Workflow
 
@@ -287,7 +287,7 @@ Project Astra should feel:
 - Responsive title improvements
 - Container restructuring
 
-### ⏳ M006.2
+### ✅ M006.2
 - Complete premium hero redesign
 - About Me card
 - Projects card
@@ -296,7 +296,7 @@ Project Astra should feel:
 - Nebula animation
 - Premium hover effects
 
-### 🔜 M006.3
+### ✅ M006.3
 - Theme color switcher
 - Performance optimization
 - Mobile polish
