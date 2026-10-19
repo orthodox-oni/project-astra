@@ -13,7 +13,7 @@
   --serif: "Cormorant Garamond", "Times New Roman", serif;
   --sans: "Outfit", system-ui, sans-serif;
   --radius: 14px;
-  --header-h: 72px;
+  --header-h: 80px;
   --max: 1280px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -32,7 +32,10 @@ html, body {
   forced-color-adjust: none;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 20px);
+}
 
 img, svg { display: block; max-width: 100%; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
@@ -149,14 +152,15 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; margin: 0; letter-spac
 .site-header {
   position: fixed;
   inset: 0 0 auto;
-  z-index: 50;
+  z-index: 100;
   padding: 18px 4.5vw 0;
 }
 .header-inner {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  position: relative;
+  display: flex;
   align-items: center;
-  gap: 24px;
+  justify-content: space-between;
+  gap: 16px;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -164,51 +168,173 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; margin: 0; letter-spac
   display: flex;
   align-items: center;
   gap: 10px;
+  min-height: 46px;
+  padding: 0 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  background: rgba(10, 10, 10, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   font-size: 0.72rem;
   letter-spacing: 0.28em;
   font-weight: 500;
 }
 .brand-mark { width: 16px; height: 16px; }
-.nav-links {
-  display: flex;
-  justify-content: center;
-  gap: clamp(16px, 2vw, 32px);
+.header-inner nav {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: min(280px, calc(100vw - 9vw));
 }
+.nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  background: rgba(10, 10, 10, 0.94);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.nav-links.open { display: flex; }
 .nav-links a {
   position: relative;
+  display: block;
   font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.52);
-  padding-bottom: 8px;
+  padding: 9px 12px;
+  border-radius: 9px;
   transition: color 0.25s ease;
 }
 .nav-links a:hover { color: #fff; }
 .nav-links a.is-active { color: #fff; }
 .nav-links a.is-active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.75);
+  content: none;
 }
+/*
+ * Adapted from "itchy-seahorse-2" by r0n-dev on Uiverse.io.
+ * Copyright (c) 2026 r0n-dev
+ *
+ * MIT License
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
 .nav-toggle {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid var(--line-strong);
   display: grid;
-  place-items: center;
-  color: var(--silver);
-  background: rgba(255, 255, 255, 0.03);
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  align-content: center;
+  justify-items: center;
+  background: transparent;
 }
-.nav-toggle { display: none; }
-.nav-toggle span {
-  display: block;
-  width: 14px;
-  height: 1px;
-  background: #fff;
-  margin: 3px 0;
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--silver);
+  outline-offset: 2px;
+}
+.nav-toggle__frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  border: 1px solid #0d0e10;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #1e2026 0%, #141519 100%);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.6);
+  transition: transform 0.1s ease;
+}
+.nav-toggle:active .nav-toggle__frame { transform: scale(0.95); }
+.nav-toggle__receiver {
+  position: absolute;
+  right: 4px;
+  width: 6px;
+  height: 20px;
+  border-radius: 2px;
+  background: #0b0c0e;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+.nav-toggle__bolt {
+  position: absolute;
+  z-index: 2;
+  left: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 32px;
+  height: 16px;
+  padding-right: 4px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #8a909e 0%, #4a4e59 100%);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.nav-toggle__rivet {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #282a30;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.nav-toggle__status {
+  position: absolute;
+  z-index: 1;
+  top: 4px;
+  left: 4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2b2d35;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bolt {
+  animation: menu-bolt-slam 0.35s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle__status {
+  background: #ffb700;
+  box-shadow:
+    0 0 6px rgba(255, 183, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  transition-delay: 0.15s;
+}
+.nav-toggle[aria-expanded="false"] .nav-toggle__bolt {
+  animation: menu-bolt-retract 0.25s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+@keyframes menu-bolt-slam {
+  0% { transform: translateX(0); }
+  45% { transform: translateX(26px); }
+  70% { transform: translateX(22px); }
+  100% { transform: translateX(24px); }
+}
+@keyframes menu-bolt-retract {
+  0% { transform: translateX(24px); }
+  100% { transform: translateX(0); }
 }
 
 /* Hero */
@@ -222,7 +348,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; margin: 0; letter-spac
   gap: 24px;
   max-width: 1440px;
   margin: 0 auto;
-  padding: calc(var(--header-h) + 20px) 4.5vw 12px;
+  padding: calc(var(--header-h) + 30px) 4.5vw 12px;
 }
 .hero-copy { max-width: 520px; }
 .eyebrow {
@@ -1197,11 +1323,13 @@ body.booted .hero-orbit { animation: fadeIn 0.9s 0.2s var(--ease) both; }
   .specialty-cursor,
   .book-card-revealing,
   .email-send:active .email-send__ring,
+  .nav-toggle__bolt,
   .about-orbit__ring,
   .about-orbit__core::before,
   .about-orbit__core::after,
   body.booted .hero .hero-copy > *,
   body.booted .hero-orbit { animation: none; }
+  .nav-toggle[aria-expanded="true"] .nav-toggle__bolt { transform: translateX(24px); }
   [data-reveal] { opacity: 1; transform: none; }
   body.booted .hero .hero-copy > *,
   body.booted .hero-orbit { opacity: 1; transform: none; }
@@ -1220,19 +1348,6 @@ body.booted .hero-orbit { animation: fadeIn 0.9s 0.2s var(--ease) both; }
 }
 
 @media (max-width: 820px) {
-  .header-inner { grid-template-columns: auto auto auto; }
-  .nav-toggle { display: grid; justify-self: end; }
-  .header-inner nav { grid-column: 1 / -1; }
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 14px 16px;
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    background: rgba(10, 10, 10, 0.94);
-  }
-  .nav-links.open { display: flex; }
   .featured { grid-template-columns: 1fr; }
   .featured-label { writing-mode: horizontal-tb; transform: none; margin-bottom: 8px; }
   .featured-grid, .status-strip, .split, .stat-grid, .card-grid.four, .card-grid.three {
