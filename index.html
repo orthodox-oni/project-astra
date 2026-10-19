@@ -6,193 +6,423 @@
     <title>PROJECT ASTRA | Samrat Singh</title>
     <meta
       name="description"
-      content="A cinematic living portfolio documenting Samrat Singh's journey from student to software engineer."
+      content="Project Astra — a cinematic living portfolio documenting Samrat Singh's journey from student to software engineer."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body data-theme="emerald" data-mode="glow">
-    <a class="skip-link" href="#home">Skip to mission</a>
+  <body>
+    <a class="skip-link" href="#home">Skip to content</a>
 
-    <div class="launch-sequence" id="launchSequence" role="dialog" aria-modal="true" aria-labelledby="launchTitle">
-      <canvas class="launch-stars" id="launchStars"></canvas>
-      <div class="launch-stage" id="launchStage">
-        <p class="launch-kicker" id="launchKicker">PROJECT ASTRA</p>
-        <h2 id="launchTitle">Initializing systems</h2>
-        <p class="launch-detail" id="launchDetail">Calibrating mission control…</p>
-        <div class="launch-progress" aria-hidden="true"><span id="launchProgress"></span></div>
-        <p class="mission-ready" id="missionReady">Mission status: READY</p>
-        <div class="rocket-bay" id="rocketBay" aria-hidden="true">
-          <div class="rocket" id="rocket">
-            <span class="rocket-fin left"></span>
-            <span class="rocket-body"></span>
-            <span class="rocket-fin right"></span>
-            <span class="rocket-flame"></span>
-          </div>
+    <div class="preloader" id="preloader" role="dialog" aria-modal="true" aria-labelledby="preloaderTitle">
+      <canvas class="preloader-stars" id="preloaderStars" aria-hidden="true"></canvas>
+      <div class="preloader-stage">
+        <p class="preloader-kicker">PROJECT ASTRA</p>
+        <h2 id="preloaderTitle" class="visually-hidden">Launching</h2>
+        <div class="rocket-scene" aria-hidden="true">
+          <svg class="rocket-svg" id="rocketSvg" viewBox="0 0 64 160" fill="none">
+            <path class="rocket-trail" d="M32 88v68" stroke="url(#trail)" stroke-width="1.2" stroke-linecap="round" />
+            <g class="rocket-craft">
+              <path d="M24 78 L32 92 L40 78 Z" fill="#c8c4bc" opacity="0.55" />
+              <path d="M32 12 C42 36 44 58 40 78 L32 86 L24 78 C20 58 22 36 32 12Z" fill="url(#body)" />
+              <path d="M32 12 C38 34 39 54 36 72 L32 78 L28 72 C25 54 26 34 32 12Z" fill="url(#highlight)" />
+              <circle cx="32" cy="42" r="5.5" fill="#0b0b0b" stroke="#e8e4dc" stroke-width="1.2" />
+              <circle cx="32" cy="42" r="2.4" fill="#d5d0c6" />
+            </g>
+            <defs>
+              <linearGradient id="body" x1="24" y1="12" x2="44" y2="86">
+                <stop stop-color="#f4f1ea" />
+                <stop offset="0.55" stop-color="#b8b3a8" />
+                <stop offset="1" stop-color="#6d6962" />
+              </linearGradient>
+              <linearGradient id="highlight" x1="28" y1="12" x2="36" y2="78">
+                <stop stop-color="#ffffff" stop-opacity="0.9" />
+                <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient id="trail" x1="32" y1="88" x2="32" y2="156">
+                <stop stop-color="#ffffff" stop-opacity="0.7" />
+                <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
       </div>
-      <p class="welcome-line" id="welcomeLine">Welcome to Project Astra</p>
-      <button class="skip-launch" id="skipLaunch" type="button">Skip sequence</button>
+      <button class="skip-launch" id="skipLaunch" type="button">Skip</button>
     </div>
 
     <div class="progress-bar" id="progressBar"></div>
-    <canvas class="starfield" id="starfield"></canvas>
-    <div class="cosmic-glow" aria-hidden="true"></div>
-    <div class="cursor-glow" id="cursorGlow"></div>
-    <div class="custom-cursor" id="customCursor"></div>
+    <canvas class="starfield" id="starfield" aria-hidden="true"></canvas>
+    <div class="atmosphere" aria-hidden="true"></div>
 
-    <header class="topbar">
-      <nav class="navglass" aria-label="Primary">
-        <a class="brand" href="#home">ASTRA</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#home">
+          <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2l1.2 7.3L20 12l-6.8 2.7L12 22l-1.2-7.3L4 12l6.8-2.7L12 2z" fill="currentColor" />
+          </svg>
+          <span>PROJECT ASTRA</span>
+        </a>
+
         <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-          <span></span><span></span><span></span>
+          <span></span><span></span>
         </button>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#library">Bookshelf</a></li>
-          <li><a href="#journey">Timeline</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="theme-controls">
-          <div class="color-picker" id="colorPicker">
-            <button class="theme-button palette-trigger" id="paletteTrigger" type="button" aria-label="Choose accent colour" aria-expanded="false">✦</button>
-            <div class="palette-menu" id="paletteMenu">
-              <button class="color-option active" type="button" data-theme="emerald" aria-label="Emerald"></button>
-              <button class="color-option" type="button" data-theme="violet" aria-label="Violet"></button>
-              <button class="color-option" type="button" data-theme="solar" aria-label="Solar"></button>
-            </div>
-          </div>
-          <button class="theme-button mode-toggle" id="modeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">☀</button>
-        </div>
-      </nav>
+
+        <nav aria-label="Primary">
+          <ul class="nav-links" id="navLinks">
+            <li><a class="is-active" href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#library">Library</a></li>
+            <li><a href="#growth">Growth</a></li>
+            <li><a href="#places">Places</a></li>
+            <li><a href="#novels">Novels</a></li>
+            <li><a href="#quotes">Quotes</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </nav>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle atmosphere" title="Atmosphere">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="7.25" stroke="currentColor" stroke-width="1.2" />
+            <path d="M12 5v2.2M12 16.8V19M5 12h2.2M16.8 12H19M7.05 7.05l1.55 1.55M15.4 15.4l1.55 1.55M7.05 16.95l1.55-1.55M15.4 8.6l1.55-1.55" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
     </header>
 
     <main>
-      <section class="section hero" id="home">
-        <div class="hero-ambient" aria-hidden="true">
-          <div class="nebula nebula-one"></div>
-          <div class="nebula nebula-two"></div>
-          <div class="planet planet-large"></div>
-          <div class="planet planet-small"></div>
-          <div class="ring"></div>
-          <span class="shooting-star"></span>
-          <span class="float-orb orb-a"></span>
-          <span class="float-orb orb-b"></span>
-        </div>
-        <div class="content-container" data-reveal>
-          <p class="eyebrow">PROJECT ASTRA</p>
-          <h1 class="hero-title"><span>SAMRAT SINGH</span></h1>
-          <p class="tagline">A student building the future—one line of code at a time.</p>
+      <section class="hero" id="home">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow">Independently exploring the possible</p>
+          <h1>Samrat Singh</h1>
+          <p class="hero-lead">A student building the future—<br />one line of code at a time.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary magnetic" href="#journey">Follow the journey</a>
-            <a class="btn btn-secondary magnetic" href="#about">Read the story</a>
+            <a class="btn btn-primary" href="#projects">View Projects <span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="#contact">Let’s Talk</a>
           </div>
-          <p class="typing-line">I am a <span id="typeText"></span><span class="cursor">|</span></p>
+          <p class="student-badge"><span class="badge-line"></span> I am a student</p>
+          <p class="hero-specialty" aria-label="Curious about psychology, law, cybersecurity, and aeronautics">
+            <span class="specialty-prefix" aria-hidden="true">Curious about</span>
+            <span class="specialty-word" id="specialtyWord" aria-hidden="true">psychology</span>
+            <span class="specialty-cursor" aria-hidden="true"></span>
+          </p>
+        </div>
+
+        <div class="hero-orbit" aria-hidden="true">
+          <div class="hero-loader">
+            <div class="planet-trail trail-one"><span></span></div>
+            <div class="planet-trail trail-two"><span></span></div>
+            <div class="planet-trail trail-three"><span></span></div>
+            <span class="loader-star"></span>
+            <span class="loader-star-shadow"></span>
+          </div>
         </div>
       </section>
 
-      <section class="poster-grid" aria-label="Highlights">
-        <article class="poster-card about-card" data-reveal>
-          <div class="poster-copy">
-            <p class="poster-label">About Me</p>
-            <svg class="poster-icon" aria-hidden="true" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.25"><circle cx="24" cy="15" r="8"/><path d="M9 40c0-8.3 6.7-15 15-15s15 6.7 15 15M8 40h32"/></svg>
-            <h3>I love turning ideas into real-world solutions through code.</h3>
-            <a href="#about">Learn more →</a>
+      <section class="featured" id="atlas" aria-labelledby="featuredLabel">
+        <p class="featured-label" id="featuredLabel">Featured<br />sections</p>
+        <div class="featured-grid">
+          <a class="feature-card" href="#projects" data-reveal>
+            <img src="https://images.unsplash.com/photo-1446776877081-d282a0f896e2?auto=format&fit=crop&w=640&q=80" alt="" />
+            <div class="feature-copy">
+              <span>01</span>
+              <h3>Projects</h3>
+              <p>Ideas turned into real things.</p>
+            </div>
+            <span class="feature-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="feature-card" href="#library" data-reveal>
+            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=640&q=80" alt="" />
+            <div class="feature-copy">
+              <span>02</span>
+              <h3>Library</h3>
+              <p>Books, notes and endless curiosity.</p>
+            </div>
+            <span class="feature-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="feature-card" href="#growth" data-reveal>
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=640&q=80" alt="" />
+            <div class="feature-copy">
+              <span>03</span>
+              <h3>Growth</h3>
+              <p>The journey of becoming better.</p>
+            </div>
+            <span class="feature-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="feature-card" href="#places" data-reveal>
+            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=640&q=80" alt="" />
+            <div class="feature-copy">
+              <span>04</span>
+              <h3>Places</h3>
+              <p>Real and dream destinations.</p>
+            </div>
+            <span class="feature-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="feature-card" href="#novels" data-reveal>
+            <img src="https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=640&q=80" alt="" />
+            <div class="feature-copy">
+              <span>05</span>
+              <h3>Novels</h3>
+              <p>Stories from my imagination.</p>
+            </div>
+            <span class="feature-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="feature-card" href="#quotes" data-reveal>
+            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=640&q=80" alt="" />
+            <div class="feature-copy">
+              <span>06</span>
+              <h3>Quotes</h3>
+              <p>Words that stay with me.</p>
+            </div>
+            <span class="feature-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="status-strip" aria-label="Mission status">
+        <div class="status-block exploring">
+          <p class="status-kicker"><span class="compass" aria-hidden="true"></span> Currently exploring</p>
+          <p class="status-tags">Python <i>/</i> Web Development <i>/</i> Psychology <i>/</i> Literature <i>/</i> Anime <i>/</i> Fitness</p>
+        </div>
+        <blockquote class="status-quote">
+          <p>“The goal isn’t to live forever, but to create something that will.”</p>
+          <cite>— Samrat Singh</cite>
+        </blockquote>
+        <div class="status-block milestone">
+          <div class="milestone-orbit" aria-hidden="true"><span></span></div>
+          <div>
+            <p class="status-kicker">Next milestone</p>
+            <p class="milestone-title">Finish Project Astra v1.0</p>
+            <div class="milestone-bar" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" aria-label="Project Astra v1.0 progress">
+              <span style="width: 68%"></span>
+            </div>
           </div>
-        </article>
-        <article class="poster-card project-card poster-project" data-reveal>
-          <div class="poster-copy">
-            <p class="poster-label">Projects</p>
-            <svg class="poster-icon" aria-hidden="true" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.25"><rect x="6" y="7" width="36" height="32" rx="4"/><path d="M6 16h36M14 12h.01M19 12h.01M20 27l-5 4 5 4M28 27l5 4-5 4"/></svg>
-            <h3>Explore the projects I've built and deployed.</h3>
-            <a href="#projects">View projects →</a>
-          </div>
-        </article>
-        <article class="poster-card achievement-card poster-achieve" data-reveal>
-          <div class="poster-copy">
-            <p class="poster-label">Achievements</p>
-            <svg class="poster-icon" aria-hidden="true" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.25"><path d="M10 10h7l3 7 4-9 4 9 3-7h7v7c0 7-5.5 12-14 12S10 24 10 17v-7Z"/><path d="M24 29v8M15 41h18"/></svg>
-            <h3>Milestones that motivate me to keep growing.</h3>
-            <a href="#achievements">View achievements →</a>
-          </div>
-        </article>
+          <p class="milestone-pct">68%</p>
+        </div>
       </section>
 
       <section class="section" id="about">
-        <div class="section-header" data-reveal><span>01</span><h2>Mission profile</h2></div>
-        <div class="grid-two mission-layout">
-          <div class="panel mission-copy" data-reveal>
-            <p class="section-eyebrow">The Astra philosophy</p>
+        <div class="section-header" data-reveal>
+          <span>01</span>
+          <h2>About</h2>
+        </div>
+        <div class="split">
+          <div class="glass panel" data-reveal>
+            <p class="eyebrow">The Astra philosophy</p>
             <h3>A living record of becoming an engineer.</h3>
             <p>I am Samrat Singh, a student learning how focused ideas become useful products through thoughtful engineering.</p>
             <p>Project Astra is an honest portfolio: real work, real learning, and visible evidence of growth. No inflated titles. No fake experience. Just the current journey, documented in public.</p>
-            <ul class="principles"><li>Build honestly.</li><li>Learn every day.</li><li>Understand before copying.</li><li>Make every version better.</li></ul>
+            <ul class="principles">
+              <li>Build honestly.</li>
+              <li>Learn every day.</li>
+              <li>Understand before copying.</li>
+              <li>Make every version better.</li>
+            </ul>
           </div>
-          <div class="mission-stats" data-reveal>
-            <article><strong class="counter" data-count="1">0</strong><span>active mission</span></article>
-            <article><strong class="counter" data-count="7">0</strong><span>growth tracks</span></article>
-            <article><strong>∞</strong><span>curiosity</span></article>
-            <article class="visitor-stat"><strong id="visitorCount">—</strong><span>visits from this device</span></article>
+          <div class="stat-grid" data-reveal>
+            <article class="glass"><strong class="counter" data-count="1">0</strong><span>active mission</span></article>
+            <article class="glass"><strong class="counter" data-count="7">0</strong><span>growth tracks</span></article>
+            <article class="glass"><strong>∞</strong><span>curiosity</span></article>
+            <article class="glass"><strong id="visitorCount">—</strong><span>visits from this device</span></article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="skills">
-        <div class="section-header" data-reveal><span>02</span><h2>Growth engine</h2></div>
-        <div class="skill-grid">
-          <article class="skill-card" data-reveal><span class="skill-index">01</span><h3>Software engineering</h3><p>Building dependable, clean solutions with HTML, CSS, JavaScript, and an eye for solid structure.</p></article>
-          <article class="skill-card" data-reveal><span class="skill-index">02</span><h3>Design systems</h3><p>Learning to make interfaces clearer, calmer, and more intentional through hierarchy and interaction.</p></article>
-          <article class="skill-card" data-reveal><span class="skill-index">03</span><h3>Cybersecurity</h3><p>Exploring resilient thinking, secure systems, and responsible technology.</p></article>
-          <article class="skill-card" data-reveal><span class="skill-index">04</span><h3>AI & problem solving</h3><p>Using intelligent tools thoughtfully to learn faster and solve real problems well.</p></article>
+      <section class="section" id="growth">
+        <div class="section-header" data-reveal>
+          <span>02</span>
+          <h2>Growth</h2>
+        </div>
+        <div class="card-grid four">
+          <article class="glass" data-reveal>
+            <span class="index">01</span>
+            <h3>Software engineering</h3>
+            <p>Building dependable, clean solutions with HTML, CSS, JavaScript, and an eye for solid structure.</p>
+          </article>
+          <article class="glass" data-reveal>
+            <span class="index">02</span>
+            <h3>Design systems</h3>
+            <p>Learning to make interfaces clearer, calmer, and more intentional through hierarchy and interaction.</p>
+          </article>
+          <article class="glass" data-reveal>
+            <span class="index">03</span>
+            <h3>Cybersecurity</h3>
+            <p>Exploring resilient thinking, secure systems, and responsible technology.</p>
+          </article>
+          <article class="glass" data-reveal>
+            <span class="index">04</span>
+            <h3>AI &amp; problem solving</h3>
+            <p>Using intelligent tools thoughtfully to learn faster and solve real problems well.</p>
+          </article>
         </div>
       </section>
 
       <section class="section" id="library">
-        <div class="section-header" data-reveal><span>03</span><h2>Knowledge library</h2></div>
+        <div class="section-header" data-reveal>
+          <span>03</span>
+          <h2>Library</h2>
+        </div>
         <div class="library-intro" data-reveal>
           <p>An interactive bookshelf across psychology, law, literature, and philosophy. Progress is a personal reading log, not a claim of mastery.</p>
           <div class="library-filters" role="tablist">
-            <button class="filter-button active" data-filter="all" type="button">All</button>
-            <button class="filter-button" data-filter="psychology" type="button">Psychology</button>
-            <button class="filter-button" data-filter="law" type="button">Law</button>
-            <button class="filter-button" data-filter="literature" type="button">Literature</button>
-            <button class="filter-button" data-filter="philosophy" type="button">Philosophy</button>
+            <button class="chip active" data-filter="all" type="button">All</button>
+            <button class="chip" data-filter="psychology" type="button">Psychology</button>
+            <button class="chip" data-filter="law" type="button">Law</button>
+            <button class="chip" data-filter="literature" type="button">Literature</button>
+            <button class="chip" data-filter="philosophy" type="button">Philosophy</button>
           </div>
         </div>
         <div class="bookshelf" id="bookshelf">
-          <article class="book-card" data-category="psychology" data-reveal><span class="book-spine psychology">PSY</span><div><p class="book-type">Psychology</p><h3>Thinking, Fast and Slow</h3><div class="reading-progress" aria-label="Reading progress 35%"><span style="width: 35%"></span></div><small>In progress · 35%</small></div></article>
-          <article class="book-card" data-category="psychology" data-reveal><span class="book-spine psychology">PSY</span><div><p class="book-type">Psychology</p><h3>Atomic Habits</h3><div class="reading-progress" aria-label="Reading progress 20%"><span style="width: 20%"></span></div><small>In progress · 20%</small></div></article>
-          <article class="book-card" data-category="law" data-reveal><span class="book-spine law">LAW</span><div><p class="book-type">Law</p><h3>Constitutional Law Notes</h3><div class="reading-progress" aria-label="Reading progress 15%"><span style="width: 15%"></span></div><small>Research shelf · 15%</small></div></article>
-          <article class="book-card" data-category="law" data-reveal><span class="book-spine law">LAW</span><div><p class="book-type">Law</p><h3>On Liberty</h3><div class="reading-progress" aria-label="On the reading list"><span style="width: 0%"></span></div><small>On the reading list</small></div></article>
-          <article class="book-card" data-category="literature" data-reveal><span class="book-spine literature">LIT</span><div><p class="book-type">Literature</p><h3>1984</h3><div class="reading-progress" aria-label="Reading progress 60%"><span style="width: 60%"></span></div><small>In progress · 60%</small></div></article>
-          <article class="book-card" data-category="literature" data-reveal><span class="book-spine literature">LIT</span><div><p class="book-type">Literature</p><h3>The Alchemist</h3><div class="reading-progress" aria-label="On the reading list"><span style="width: 0%"></span></div><small>On the reading list</small></div></article>
-          <article class="book-card" data-category="philosophy" data-reveal><span class="book-spine philosophy">PHI</span><div><p class="book-type">Philosophy</p><h3>Meditations</h3><div class="reading-progress" aria-label="Reading progress 10%"><span style="width: 10%"></span></div><small>In progress · 10%</small></div></article>
-          <article class="book-card" data-category="philosophy" data-reveal><span class="book-spine philosophy">PHI</span><div><p class="book-type">Philosophy</p><h3>The Republic</h3><div class="reading-progress" aria-label="On the reading list"><span style="width: 0%"></span></div><small>On the reading list</small></div></article>
+          <article class="book-card glass" data-category="psychology" data-reveal>
+            <span class="book-spine">PSY</span>
+            <div class="book-content">
+              <p class="book-type">Behavioral Economics, Decision Science &amp; Heuristics</p>
+              <h3>Thinking, Fast and Slow</h3>
+              <small class="book-author">By Daniel Kahneman</small>
+              <div class="reading-progress" role="progressbar" aria-label="Reading progress for Thinking, Fast and Slow" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><span style="width: 100%"></span></div>
+              <small>Completed · 100%</small>
+            </div>
+          </article>
+          <article class="book-card glass" data-category="psychology" data-reveal>
+            <span class="book-spine">PSY</span>
+            <div>
+              <p class="book-type">Psychology</p>
+              <h3>Atomic Habits</h3>
+              <div class="reading-progress" aria-label="Reading progress 20%"><span style="width: 20%"></span></div>
+              <small>In progress · 20%</small>
+            </div>
+          </article>
+          <article class="book-card glass" data-category="law" data-reveal>
+            <span class="book-spine">LAW</span>
+            <div>
+              <p class="book-type">Law</p>
+              <h3>Constitutional Law Notes</h3>
+              <div class="reading-progress" aria-label="Reading progress 15%"><span style="width: 15%"></span></div>
+              <small>Research shelf · 15%</small>
+            </div>
+          </article>
+          <article class="book-card glass" data-category="law" data-reveal>
+            <span class="book-spine">LAW</span>
+            <div>
+              <p class="book-type">Law</p>
+              <h3>On Liberty</h3>
+              <div class="reading-progress" aria-label="On the reading list"><span style="width: 0%"></span></div>
+              <small>On the reading list</small>
+            </div>
+          </article>
+          <article class="book-card glass" data-category="literature" data-reveal>
+            <span class="book-spine">LIT</span>
+            <div>
+              <p class="book-type">Literature</p>
+              <h3>1984</h3>
+              <div class="reading-progress" aria-label="Reading progress 60%"><span style="width: 60%"></span></div>
+              <small>In progress · 60%</small>
+            </div>
+          </article>
+          <article class="book-card glass" data-category="literature" data-reveal>
+            <span class="book-spine">LIT</span>
+            <div>
+              <p class="book-type">Literature</p>
+              <h3>The Alchemist</h3>
+              <div class="reading-progress" aria-label="On the reading list"><span style="width: 0%"></span></div>
+              <small>On the reading list</small>
+            </div>
+          </article>
+          <article class="book-card glass" data-category="philosophy" data-reveal>
+            <span class="book-spine">PHI</span>
+            <div>
+              <p class="book-type">Philosophy</p>
+              <h3>Meditations</h3>
+              <div class="reading-progress" aria-label="Reading progress 10%"><span style="width: 10%"></span></div>
+              <small>In progress · 10%</small>
+            </div>
+          </article>
+          <article class="book-card glass" data-category="philosophy" data-reveal>
+            <span class="book-spine">PHI</span>
+            <div>
+              <p class="book-type">Philosophy</p>
+              <h3>The Republic</h3>
+              <div class="reading-progress" aria-label="On the reading list"><span style="width: 0%"></span></div>
+              <small>On the reading list</small>
+            </div>
+          </article>
+        </div>
+        <div class="bookshelf-more">
+          <button class="btn btn-ghost bookshelf-more-button" id="bookshelfMore" type="button" aria-controls="bookshelf">
+            Show 4 more books
+            <span aria-hidden="true">↓</span>
+          </button>
+          <p class="bookshelf-count" id="bookshelfCount" aria-live="polite"></p>
         </div>
       </section>
 
-      <section class="section" id="journey">
-        <div class="section-header" data-reveal><span>04</span><h2>Journey timeline</h2></div>
-        <div class="timeline" data-reveal>
-          <article class="timeline-entry complete"><span class="timeline-dot"></span><p class="timeline-meta">School journey</p><h3>Student orbit</h3><p>High school years spent learning how systems work—code, argument, and curiosity in parallel.</p></article>
-          <article class="timeline-entry complete"><span class="timeline-dot"></span><p class="timeline-meta">Foundation · v0.1</p><h3>Ignition</h3><p>Project created, Git and GitHub connected, first commit pushed, live server configured.</p></article>
-          <article class="timeline-entry active"><span class="timeline-dot"></span><p class="timeline-meta">Identity · v0.2</p><h3>Premium landing page</h3><p>Honest hero, authentic about, cinematic motion. Navigation and contact still being refined in public.</p></article>
-          <article class="timeline-entry"><span class="timeline-dot"></span><p class="timeline-meta">Certifications</p><h3>Proof of practice</h3><p>Certificates will appear here only when they are earned. Empty space is honest.</p></article>
-          <article class="timeline-entry"><span class="timeline-dot"></span><p class="timeline-meta">Projects</p><h3>Real builds</h3><p>Each shipped project becomes a card, a demo, and a case study—never a placeholder forever.</p></article>
-          <article class="timeline-entry"><span class="timeline-dot"></span><p class="timeline-meta">Future milestones</p><h3>Launch sequence</h3><p>Version 1.0 is a first impression: a portfolio that still has room to grow.</p></article>
+      <section class="section" id="places">
+        <div class="section-header" data-reveal>
+          <span>04</span>
+          <h2>Places</h2>
+        </div>
+        <div class="card-grid three">
+          <article class="glass place-card" data-reveal>
+            <p class="index">Real</p>
+            <h3>Earthbound</h3>
+            <p>Cities, quiet rooms, and the ordinary coordinates where the work actually happens.</p>
+          </article>
+          <article class="glass place-card" data-reveal>
+            <p class="index">Dream</p>
+            <h3>Lunar archive</h3>
+            <p>Destinations I have not reached yet—observatories, libraries, and coastlines still on the map.</p>
+          </article>
+          <article class="glass place-card" data-reveal>
+            <p class="index">Orbit</p>
+            <h3>Studio of the possible</h3>
+            <p>The inner landscape: notebooks, late nights, and the space between one version and the next.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="novels">
+        <div class="section-header" data-reveal>
+          <span>05</span>
+          <h2>Novels</h2>
+        </div>
+        <div class="glass panel" data-reveal>
+          <p class="eyebrow">Stories from imagination</p>
+          <h3>Fiction lives here when it is ready.</h3>
+          <p>This chamber is reserved for original stories. Until a manuscript is real enough to share, the space stays quiet on purpose.</p>
+        </div>
+      </section>
+
+      <section class="section" id="quotes">
+        <div class="section-header" data-reveal>
+          <span>06</span>
+          <h2>Quotes</h2>
+        </div>
+        <div class="card-grid three">
+          <blockquote class="glass quote-card" data-reveal>
+            <p>The universe is not only stranger than we imagine, it is stranger than we can imagine.</p>
+            <cite>— J.B.S. Haldane</cite>
+          </blockquote>
+          <blockquote class="glass quote-card" data-reveal>
+            <p>The goal isn’t to live forever, but to create something that will.</p>
+            <cite>— Samrat Singh</cite>
+          </blockquote>
+          <blockquote class="glass quote-card" data-reveal>
+            <p>Understand before copying. Every version should be better than the previous one.</p>
+            <cite>— Project Astra</cite>
+          </blockquote>
         </div>
       </section>
 
       <section class="section" id="projects">
-        <div class="section-header" data-reveal><span>05</span><h2>Project transmission</h2></div>
-        <div class="github-strip" data-reveal>
+        <div class="section-header" data-reveal>
+          <span>07</span>
+          <h2>Projects</h2>
+        </div>
+        <div class="github-strip glass" data-reveal>
           <p>Live GitHub signal · <a href="https://github.com/orthodox-oni/project-astra" rel="noopener noreferrer" target="_blank">orthodox-oni/project-astra</a></p>
           <ul class="github-stats">
             <li><strong id="ghStars">—</strong> stars</li>
@@ -200,111 +430,102 @@
             <li><strong id="ghUpdated">—</strong> last push</li>
           </ul>
         </div>
-        <div class="project-grid">
-          <article class="project-tile featured-project" data-reveal>
-            <div class="project-meta">Live portfolio · HTML / CSS / JS</div>
+        <div class="card-grid three">
+          <article class="glass project-tile" data-reveal>
+            <div class="index">Live portfolio · HTML / CSS / JS</div>
             <h3>Project Astra</h3>
             <p>A space-inspired portfolio documenting the journey from student to software engineer.</p>
-            <div class="project-tags"><span>Responsive</span><span>Interactive</span><span>In progress</span></div>
+            <div class="tags"><span>Responsive</span><span>Interactive</span><span>In progress</span></div>
             <div class="project-links">
-              <a class="text-button" href="https://github.com/orthodox-oni/project-astra" target="_blank" rel="noopener noreferrer">GitHub →</a>
+              <a href="https://github.com/orthodox-oni/project-astra" target="_blank" rel="noopener noreferrer">GitHub →</a>
               <button class="text-button project-open" type="button" data-project="astra">Case study →</button>
             </div>
           </article>
-          <article class="project-tile" data-reveal>
-            <div class="project-meta">Coming next</div>
+          <article class="glass project-tile" data-reveal>
+            <div class="index">Coming next</div>
             <h3>Project showcase</h3>
             <p>Reserved for real builds, live demos, and lessons learned as they ship.</p>
-            <div class="project-tags"><span>GitHub ready</span><span>Live demo ready</span></div>
+            <div class="tags"><span>GitHub ready</span><span>Live demo ready</span></div>
             <button class="text-button project-open" type="button" data-project="next">Open roadmap →</button>
           </article>
-          <article class="project-tile" data-reveal>
-            <div class="project-meta">Learning lab</div>
+          <article class="glass project-tile" data-reveal>
+            <div class="index">Learning lab</div>
             <h3>Signal console</h3>
             <p>A future dashboard for notes, experiments, and a transparent coding journey.</p>
-            <div class="project-tags"><span>Concept</span><span>Case study</span></div>
+            <div class="tags"><span>Concept</span><span>Case study</span></div>
             <button class="text-button project-open" type="button" data-project="signal">Explore concept →</button>
           </article>
         </div>
       </section>
 
-      <section class="section" id="achievements">
-        <div class="section-header" data-reveal><span>06</span><h2>Evidence of growth</h2></div>
-        <div class="achievement-grid">
-          <article class="badge-card unlocked" data-reveal><span class="badge-icon">✦</span><h3>First launch</h3><p>Built and published the foundation of Project Astra.</p><small>Unlocked · v0.1</small></article>
-          <article class="badge-card unlocked" data-reveal><span class="badge-icon">⌘</span><h3>Identity defined</h3><p>Replaced generic claims with an honest personal direction.</p><small>Unlocked · v0.2</small></article>
-          <article class="badge-card" data-reveal id="terminalBadge"><span class="badge-icon">◌</span><h3>Terminal found</h3><p>Type <code>astra</code> anywhere to open the secret developer console.</p><small>Hidden achievement</small></article>
-        </div>
-      </section>
-
-      <section class="section" id="hobbies">
-        <div class="section-header" data-reveal><span>07</span><h2>Orbit map</h2></div>
-        <div class="orbit-layout">
-          <div class="orbit-map" data-reveal aria-label="Interactive growth map">
-            <button class="orbit-node active" type="button" data-orbit="Build">Build</button>
-            <button class="orbit-node orbit-a" type="button" data-orbit="Read">Read</button>
-            <button class="orbit-node orbit-b" type="button" data-orbit="Explore">Explore</button>
-            <button class="orbit-node orbit-c" type="button" data-orbit="Reflect">Reflect</button>
-            <span class="orbit-core">ASTRA</span>
-          </div>
-          <div class="orbit-copy panel" data-reveal>
-            <p class="section-eyebrow">Interactive map</p>
-            <h3 id="orbitTitle">Build</h3>
-            <p id="orbitDescription">Make small, honest things. Each finished project becomes evidence of what is possible next.</p>
-            <div class="hobby-list"><span>Photography</span><span>Stargazing</span><span>Writing</span></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="future">
-        <div class="section-header" data-reveal><span>08</span><h2>Future archive</h2></div>
-        <div class="future-grid">
-          <article data-reveal><span>01</span><h3>AI assistant</h3><p>A small local guide for exploring this portfolio.</p><button class="text-button" id="openAssistant" type="button">Open assistant →</button></article>
-          <article data-reveal><span>02</span><h3>Interactive resume</h3><p>A living resume built from real projects, learning, and certificates.</p></article>
-          <article data-reveal><span>03</span><h3>Blog & notes</h3><p>Thoughts, reading notes, and the coding journey—published when ready.</p></article>
-          <article data-reveal><span>04</span><h3>Certificate gallery</h3><p>A home for verified certificates and future achievements.</p></article>
-          <article data-reveal><span>05</span><h3>Wallpaper vault</h3><p>Space-inspired wallpapers and visual experiments.</p></article>
-          <article data-reveal><span>06</span><h3>Hidden archive</h3><p>Secret achievements and hidden pages for curious visitors. Try typing <code>astra</code>.</p></article>
-        </div>
-      </section>
-
       <section class="section contact" id="contact">
-        <div class="section-header" data-reveal><span>09</span><h2>Start a conversation</h2></div>
-        <div class="contact-panel" data-reveal>
+        <div class="section-header" data-reveal>
+          <span>08</span>
+          <h2>Start a conversation</h2>
+        </div>
+        <div class="glass panel contact-panel" data-reveal>
           <p>If you want to follow this journey, share feedback, or build something thoughtful, I would love to connect.</p>
           <div class="contact-actions">
-            <a class="btn btn-primary" href="mailto:hello@samratsingh.dev">Send an email</a>
-            <a class="btn btn-secondary" href="https://github.com/orthodox-oni" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <button class="btn btn-secondary" id="copyStatus" type="button">Copy mission status</button>
+            <a class="btn btn-primary" href="mailto:sylvix089@gmail.com">Send an email</a>
+            <a class="btn btn-ghost" href="https://github.com/orthodox-oni" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <p>&copy; 2026 Samrat Singh. Built with HTML, CSS, and JavaScript. Version 1.0 · Project Astra.</p>
+    <footer class="site-footer">
+      <p>© 2026 Project Astra — Built with curiosity and a little bit of chaos.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/samrxat/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.3"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.3"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor"/></svg>
+        </a>
+        <a href="https://github.com/orthodox-oni" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.71.12 2.51.34 1.9-1.32 2.74-1.05 2.74-1.05.56 1.41.21 2.45.1 2.71.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+        </a>
+        <a href="mailto:sylvix089@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </a>
+      </div>
     </footer>
+
+    <aside class="phone-dock" id="phoneDock">
+      <button class="phone-toggle" id="phoneToggle" type="button" aria-expanded="false" aria-controls="phoneApps" aria-label="Open contact dock">
+        <span class="phone-notch"></span>
+        <span class="phone-screen-preview" aria-hidden="true"></span>
+      </button>
+      <div class="phone-shell" id="phoneApps" inert aria-hidden="true">
+        <div class="phone-status">
+          <span>9:41</span>
+          <span class="phone-dots"></span>
+        </div>
+        <p class="phone-label">Reach me</p>
+        <div class="phone-apps">
+          <a class="app instagram" href="https://www.instagram.com/samrxat/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.4"/><circle cx="17.2" cy="6.8" r="0.95" fill="currentColor"/></svg>
+            <span>Instagram</span>
+          </a>
+          <button class="app discord" type="button" id="discordLink" aria-label="Copy Discord handle tomato_kiwi_36611">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.3 5.4A17.4 17.4 0 0 0 15.1 4l-.3.7a15.8 15.8 0 0 1 3.8 1.4 15.4 15.4 0 0 0-13.2 0A15.8 15.8 0 0 1 9.2 4.7L8.9 4a17.4 17.4 0 0 0-4.2 1.4C2.2 9.1 1.5 12.7 1.7 16.2A17.6 17.6 0 0 0 7 18.6l.7-1.1a11.5 11.5 0 0 1-1.8-.9l.4-.3c3.5 1.7 7.3 1.7 10.8 0l.4.3c-.6.4-1.2.7-1.8.9l.7 1.1a17.6 17.6 0 0 0 5.3-2.4c.4-4.1-.5-7.6-2.4-10.8ZM9.2 14.3c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.9.9 1.8 2-.8 2-1.8 2Zm5.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg>
+            <span>@tomato_kiwi_36611</span>
+          </button>
+          <a class="app gmail" href="mailto:sylvix089@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7.2 12 13l8-5.8V17a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7.2Z" stroke="currentColor" stroke-width="1.4"/><path d="M20 7.5 12 13 4 7.5 6.2 5h11.6L20 7.5Z" stroke="currentColor" stroke-width="1.4"/></svg>
+            <span>Gmail</span>
+          </a>
+        </div>
+        <p class="visually-hidden" id="discordStatus" aria-live="polite"></p>
+        <button class="phone-close" id="phoneClose" type="button">Close</button>
+      </div>
+    </aside>
 
     <dialog class="study-modal" id="studyModal">
       <article>
-        <p class="section-eyebrow" id="studyMeta"></p>
+        <p class="eyebrow" id="studyMeta"></p>
         <h3 id="studyTitle"></h3>
         <p id="studyBody"></p>
-        <button class="btn btn-secondary" id="closeStudy" type="button">Close</button>
+        <button class="btn btn-ghost" id="closeStudy" type="button">Close</button>
       </article>
     </dialog>
-
-    <aside class="assistant" id="assistant" hidden>
-      <p class="section-eyebrow">Astra guide</p>
-      <h3>How can I help?</h3>
-      <p>I am a local assistant, not a model in the cloud. Ask about sections of this site.</p>
-      <div class="assistant-log" id="assistantLog"></div>
-      <form id="assistantForm">
-        <input id="assistantInput" type="text" placeholder="Try: bookshelf, launch, github" autocomplete="off" />
-        <button class="btn btn-primary" type="submit">Ask</button>
-      </form>
-      <button class="text-button" id="closeAssistant" type="button">Close</button>
-    </aside>
 
     <div class="terminal-overlay" id="terminal" hidden>
       <div class="terminal-window">
@@ -318,6 +539,8 @@
       </div>
     </div>
 
-    <script src="script.js?v=20260820-roadmap" defer></script>
+    <script src="psychology-books.js" defer></script>
+    <script src="law-books.js" defer></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

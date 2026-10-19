@@ -18,7 +18,7 @@ Every update represents real progress in my learning journey.
 
 🚧 Currently in Development
 
-Version: **0.2 – Identity**
+Version: **1.0 – Space Atlas (68% complete)**
 
 ---
 
@@ -43,23 +43,25 @@ Future:
 
 ## Current Features
 
-- Cinematic hero section
-- Personalized typing animation
-- Responsive layout
+- Skippable cinematic rocket launch with reduced-motion support
+- Uiverse-inspired orbital hero with a starfield spanning the site
+- Responsive navigation and six featured section cards
+- Filterable interactive bookshelf
+- Project case-study dialogs and live GitHub repository stats
+- Expandable contact dock for Instagram, Discord, and email
+- Discord handle copy feedback and a persistent atmosphere control
+- Growth, places, novels, quotes, project, and about sections
+- Project milestone tracker, visitor counter, and hidden developer terminal
 - Smooth scrolling
-- Interactive navigation
-- Project documentation
 
 ---
 
 ## Planned Features
 
-- 📚 Interactive Bookshelf
-- 🛰 Timeline
-- 🚀 Launch Sequence
-- 💻 Hidden Developer Terminal
 - 🤖 AI Assistant
-- 🌌 Space-inspired animations
+- 🛰 Interactive learning timeline
+- 🌌 Nebula and shooting-star effects
+- ✨ Subtle pointer parallax
 - 📝 Developer Blog
 
 ---
@@ -79,15 +81,8 @@ Project Astra is built on six principles:
 
 ## Milestones
 
-- ✅ M001 – Ignition
-- 🚧 M002 – Identity
-- ⏳ M003 – Knowledge
-- ⏳ M004 – Projects
-- ⏳ M005 – Launch
-- Current Mission:
-M006.1 ✅
-Next:
-M006.2 — Premium Hero Redesign
+- ✅ Cinematic Space Atlas redesign
+- 🚧 Finish Project Astra v1.0 — 68%
 
 ---
 
@@ -143,50 +138,3 @@ Project Astra will continue evolving as I grow as a developer.
 Built with curiosity, discipline, and a commitment to continuous learning.
 
 © Samrat Singh
-
-What we'll build over the next missions
-
-Mission M006
-✅ Hero cleanup
-
-Mission M007
-⭐ Premium starfield
-
-Mission M008
-🌌 Animated nebula
-
-Mission M009
-🌠 Shooting stars
-
-Mission M010
-🪐 Floating planets (pure CSS)
-
-Mission M011
-💎 Premium hero cards
-
-Mission M012
-✨ Mouse parallax
-
-Mission M013
-⚡ Section transitions
-
-Mission M014
-📚 About section redesign
-
-Mission M015
-🚀 Project showcase
-
-Mission M016
-📖 Library
-
-Mission M017
-🏆 Achievements
-
-Mission M018
-📱 Responsive redesign
-
-Mission M019
-🌙 Theme engine
-
-Mission M020
-🎬 Final cinematic polish save this in memory to okay 
