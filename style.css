@@ -192,7 +192,6 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; margin: 0; letter-spac
   height: 1px;
   background: rgba(255, 255, 255, 0.75);
 }
-.theme-toggle,
 .nav-toggle {
   width: 36px;
   height: 36px;
@@ -203,7 +202,6 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; margin: 0; letter-spac
   color: var(--silver);
   background: rgba(255, 255, 255, 0.03);
 }
-.theme-toggle svg { width: 16px; height: 16px; }
 .nav-toggle { display: none; }
 .nav-toggle span {
   display: block;
@@ -212,9 +210,6 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; margin: 0; letter-spac
   background: #fff;
   margin: 3px 0;
 }
-
-body.calm .starfield { opacity: 0.35; }
-body.calm .atmosphere { filter: saturate(0.7); }
 
 /* Hero */
 .hero {

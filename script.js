@@ -5,7 +5,6 @@ const progressBar = document.getElementById("progressBar");
 const starfield = document.getElementById("starfield");
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
-const themeToggle = document.getElementById("themeToggle");
 const phoneDock = document.getElementById("phoneDock");
 const phoneToggle = document.getElementById("phoneToggle");
 const phoneClose = document.getElementById("phoneClose");
@@ -49,7 +48,6 @@ window.addEventListener("DOMContentLoaded", () => {
   initScrollProgress();
   initReveal();
   initNav();
-  initTheme();
   initLibrary();
   initSpecialtyTypewriter();
   initCounters();
@@ -248,16 +246,6 @@ function initActiveNav() {
     { rootMargin: "-40% 0px -50% 0px" }
   );
   sections.forEach((section) => observer.observe(section));
-}
-
-function initTheme() {
-  const calm = readPreference("astra-calm") === "1";
-  document.body.classList.toggle("calm", calm);
-  themeToggle?.addEventListener("click", () => {
-    const next = !document.body.classList.contains("calm");
-    document.body.classList.toggle("calm", next);
-    savePreference("astra-calm", next ? "1" : "0");
-  });
 }
 
 function initLibrary() {

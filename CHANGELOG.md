@@ -80,3 +80,37 @@ Fixed
 
 ### Notes
 This mission lays the groundwork for the complete Project Astra landing page redesign planned in M006.2.
+
+## M007 – Space Atlas and Library Expansion
+
+### Added
+- Cinematic, skippable rocket launch preloader.
+- Animated starfield across the full website.
+- Responsive, cinematic dark visual style with serif headings and silver typography.
+- Space-inspired hero with a Uiverse-inspired planetary animation.
+- Six featured section cards, mission status strip, and minimalist footer.
+- Typewriter effect beneath the student badge for psychology, law, cybersecurity, and aeronautics.
+- Expandable contact dock for Instagram, Discord, and email.
+- Project case-study dialogs, live GitHub repository stats, visitor counter, and hidden developer terminal.
+- Psychology bookshelf with 186 completed titles and authors across 18 fields.
+- Legal history bookshelf with 94 completed titles and authors across 7 themes.
+- “Show 4 more books” controls for the All view and each library category.
+- Live bookshelf count showing how many books are currently visible.
+
+### Changed
+- Reworked the portfolio with a cinematic dark visual style, responsive navigation, and featured section cards.
+- Updated contact actions to use Samrat’s Instagram profile and email address; Discord provides copy-handle feedback.
+- Upgraded the existing “Thinking, Fast and Slow” library card to completed rather than adding a duplicate.
+- Removed the header atmosphere control.
+- Refined the hero visual through multiple iterations: removed the rotating moon/galaxy, picture-surrounding orbit, and black-hole effect; the final planetary illustration stays centered while its small planet trails animate.
+
+### Fixed
+- Improved small-screen layout and prevented horizontal overflow.
+- Added reduced-motion support for animated effects.
+- Corrected library filtering so hidden cards stay hidden and show-more counts follow the selected category.
+- Improved contact dock keyboard and focus behavior.
+- Improved library card accessibility with readable progress labels and completion values.
+
+### Notes
+- The psychology and legal-history catalog entries are displayed as completed at 100%.
+- Existing non-catalog books remain in their original categories and retain their existing progress.

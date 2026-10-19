@@ -142,3 +142,30 @@ Rather than patching the existing hero, the next mission will rebuild it from sc
 
 Next Mission:
 M006.2 – Premium Hero Redesign
+
+# Dev Log
+
+## Mission M007 – Space Atlas and Library Expansion
+
+Today I continued turning Project Astra into a more complete space-themed portfolio and learning archive.
+
+Completed:
+- Added a skippable rocket launch intro and a moving starfield across the website.
+- Built a responsive hero with a subtle planetary animation and a typewriter line for psychology, law, cybersecurity, and aeronautics.
+- Added a contact dock for Instagram, Discord, and email.
+- Added 186 completed psychology books and 94 completed legal history books to the library, including their authors and subject areas.
+- Added category filters and a “Show 4 more books” button so visitors can browse a large shelf a few books at a time.
+- Removed the header atmosphere control.
+- Improved the mobile layout, reduced-motion behavior, and keyboard access.
+
+What I Learned:
+- A large collection is easier to browse when it is grouped, filtered, and revealed in small batches.
+- Accessibility details such as keyboard focus, clear labels, and reduced-motion support are part of the feature.
+- Keeping book data separate from the page structure makes the catalog easier to extend.
+- Testing the actual filters and visible book counts catches issues that a visual check can miss.
+
+Biggest Win:
+The library can now hold a much larger collection without showing every book at once, while still letting visitors reveal more whenever they want.
+
+Next Mission:
+- Continue adding real projects and learning milestones as they are completed.

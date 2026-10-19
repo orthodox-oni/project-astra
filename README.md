@@ -44,12 +44,14 @@ Future:
 ## Current Features
 
 - Skippable cinematic rocket launch with reduced-motion support
-- Uiverse-inspired orbital hero with a starfield spanning the site
+- Responsive space-themed hero with an animated starfield spanning the site
+- Typewriter line highlighting psychology, law, cybersecurity, and aeronautics
 - Responsive navigation and six featured section cards
-- Filterable interactive bookshelf
+- Filterable bookshelf with “Show 4 more books” pagination for each category and All
+- 186 completed psychology books and 94 completed legal history books, grouped by subject
 - Project case-study dialogs and live GitHub repository stats
 - Expandable contact dock for Instagram, Discord, and email
-- Discord handle copy feedback and a persistent atmosphere control
+- Discord handle copy feedback
 - Growth, places, novels, quotes, project, and about sections
 - Project milestone tracker, visitor counter, and hidden developer terminal
 - Smooth scrolling
@@ -96,6 +98,8 @@ project-astra/
 ├── index.html
 ├── style.css
 ├── script.js
+├── psychology-books.js
+├── law-books.js
 │
 ├── README.md
 ├── ROADMAP.md
