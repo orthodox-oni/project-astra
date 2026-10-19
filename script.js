@@ -55,6 +55,7 @@ window.addEventListener("DOMContentLoaded", () => {
   initGitHub();
   initProjects();
   initPhoneDock();
+  initPhoneClock();
   initTerminal();
   initActiveNav();
 });
@@ -520,6 +521,38 @@ function initPhoneDock() {
       console.error("Could not copy the Discord handle.", error);
     }
   });
+}
+
+function initPhoneClock() {
+  const clocks = document.querySelectorAll(".phone-clock");
+  const dates = document.querySelectorAll(".phone-date");
+  if (!clocks.length || !dates.length) return;
+
+  const timeFormatter = new Intl.DateTimeFormat(undefined, {
+    hour: "numeric",
+    minute: "2-digit",
+  });
+  const dateFormatter = new Intl.DateTimeFormat(undefined, {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+
+  function updatePhoneClock() {
+    const now = new Date();
+    const timestamp = now.toISOString();
+    clocks.forEach((clock) => {
+      clock.textContent = timeFormatter.format(now);
+      clock.dateTime = timestamp;
+    });
+    dates.forEach((date) => {
+      date.textContent = dateFormatter.format(now);
+      date.dateTime = timestamp;
+    });
+  }
+
+  updatePhoneClock();
+  window.setInterval(updatePhoneClock, 1000);
 }
 
 function initTerminal() {

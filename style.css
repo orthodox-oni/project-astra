@@ -1086,12 +1086,6 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; margin: 0; letter-spac
   color: var(--muted);
   margin-bottom: 14px;
 }
-.phone-dots {
-  width: 28px;
-  height: 4px;
-  border-radius: 99px;
-  background: #333;
-}
 .phone-label {
   font-family: var(--serif);
   font-size: 1.2rem;
