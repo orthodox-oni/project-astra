@@ -260,7 +260,8 @@ function initLibrary() {
 
   catalogs.forEach(({ category, spineLabel, books: catalog }) => {
     if (!Array.isArray(catalog)) {
-      throw new Error(`The ${category} book catalog could not be loaded.`);
+      console.warn(`The ${category} book catalog could not be loaded.`);
+      return;
     }
 
     const existingTitles = new Set(
@@ -269,6 +270,7 @@ function initLibrary() {
       )
     );
     catalog.forEach((book) => {
+      if (!book || typeof book.title !== "string" || typeof book.author !== "string") return;
       if (existingTitles.has(book.title.toLocaleLowerCase())) return;
 
       const card = document.createElement("article");
@@ -284,7 +286,7 @@ function initLibrary() {
 
       const field = document.createElement("p");
       field.className = "book-type";
-      field.textContent = book.field;
+      field.textContent = book.field || "Reading";
 
       const title = document.createElement("h3");
       title.textContent = book.title;
